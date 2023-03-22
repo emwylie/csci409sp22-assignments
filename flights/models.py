@@ -15,4 +15,6 @@ class Flight(models.Model):
     flight_number = models.IntegerField()
     airline = models.ForeignKey(Airline, on_delete=models.PROTECT, related_name='name_airline')
 
+    
+
 
