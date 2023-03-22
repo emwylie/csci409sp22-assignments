@@ -1,0 +1,32 @@
+<!-- Specify which template to extend -->
+{% extends 'base.html' %}
+
+<!-- Add content to the content block in the main template -->
+{% block content %}
+<!-- Q1. Inside the h1 tag display the airport_code- airport name -->
+<h1>
+
+</h1>
+<!-- Display the airport address -->
+<h2>Address</h2>
+<p>
+
+</p>
+<h2>Runways</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Runway</th>
+            <th scope="col">Length</th>
+            <th scope="col">Width</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Q3 Display the runway number along with designation L,C,R, etc. -->
+        <!-- Runway length and width  in a table row-->
+        {% for runway in airport.runway_set.all %} <!-- this is a new type of object it will fetch all of the associated runways -->
+
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

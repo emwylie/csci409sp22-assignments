@@ -1,0 +1,25 @@
+<!-- Specify which template to extend -->
+{% extends 'base.html' %}
+
+<!-- Add content to the content block in the main template -->
+{% block content %}
+<h1>Airports</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Airport Code</th>
+            <th scope="col">Airport Name</th>
+            <th scope="col">More Information</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for airport in airports %} <!-- Loop through airports from the context variable specified in views.py -->
+            <tr>
+                <td>{{ airport.airport_code }}</td>
+                <td>{{ airport.name }}</td>
+                <td><a href="/airports/{{ airport.airport_code }}">More Information</a></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
