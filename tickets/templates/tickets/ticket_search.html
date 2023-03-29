@@ -1,0 +1,21 @@
+<!-- Specify which template to extend -->
+{% extends 'base.html' %}
+
+<!-- Add content to the content block in the main template -->
+{% block content %}
+<h1>Confirmation Number- {{ reservation.id }}</h1>
+<table class="table">
+    <tr>
+        <td><strong>Number of People</strong></td>
+        <td>{{ reservation.num_people}}</td>
+    </tr>
+    <tr>
+        <td><strong>Total Cost</strong></td>
+        <td>{{ reservation.total_cost}}</td>
+    </tr>
+</table>
+<!-- 5 Extra Credit Points  Create a table that displays the flight information -->
+<!-- This should display the airline, flight number, arrival and departure airports, and arrival and departure times -->
+
+<!-- 5 Extra Credit Points Create a table that displays the ticket information -->
+{% endblock %}
