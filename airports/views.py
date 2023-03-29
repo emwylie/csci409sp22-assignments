@@ -1,5 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from tickets.forms import TicketForm
+from tickets.models import Reservation
 from .models import Airport
 from .models import Runway
 
@@ -20,3 +22,9 @@ def airport_info(request, airport_code):
     context = {'airports': airports}
     # return HttpResponse('Showing info for airport: ' + airport.name + "- " + airport.airport_code)
     return render(request, 'airports/airport.html', context)
+
+def search(request):
+    form = TicketForm(request.POST)
+    if form.is_valid():
+        reservation = Reservation.objects.get(id=form.cleaned_data['confirmation_number'])
+        return render(request, 'tickets/ticket_search.html', {'reservation': reservation})

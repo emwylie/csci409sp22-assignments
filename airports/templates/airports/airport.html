@@ -29,10 +29,13 @@
     <tbody>
         <!-- Q3 Display the runway number along with designation L,C,R, etc. -->
         <!-- Runway length and width  in a table row-->
-        {% for runway in airport.runway_set.all %} <!-- this is a new type of object it will fetch all of the associated runways -->
+        {% for runway in airports.runway_set.all %} <!-- this is a new type of object it will fetch all of the associated runways -->
+        <tr>
             <td>{{runway.runway_number}}{{runway.runway_designation}}</td>
             <td>{{runway.length}}</td>
             <td>{{runway.width}}</td>
+        </tr>
+
         {% endfor %}
     </tbody>
 </table>

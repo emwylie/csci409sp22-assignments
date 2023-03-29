@@ -1,0 +1,25 @@
+<!-- Specify which template to extend -->
+{% extends 'base.html' %}
+
+<!-- Add content to the content block in the main template -->
+{% block content %}
+<h1>Airline- {{ flights.airline.airline_name }}</h1>
+<table class="table">
+    <tr>
+        <td><strong>Flight Number</strong></td>
+        <td>{{ flights.flight_number }}</td>
+    </tr>
+    <tr>
+        <td><strong>Departure Time</strong></td>
+        <td>{{ flights.departure }}</td>
+    </tr>
+    <tr>
+        <td><strong>Arrival Time</strong></td>
+        <td>{{ flights.arrival }}</td>
+    </tr>
+</table>
+<!-- 5 Extra Credit Points  Create a table that displays the flight information -->
+<!-- This should display the airline, flight number, arrival and departure airports, and arrival and departure times -->
+
+<!-- 5 Extra Credit Points Create a table that displays the ticket information -->
+{% endblock %}

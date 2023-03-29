@@ -1,0 +1,13 @@
+<!-- Specify which template to extend -->
+{% extends 'base.html' %}
+
+<!-- Add content to the content block in the main template -->
+{% block content %}
+<form action="/flights/search/" method="post">
+    <!-- Create a csrf token -->
+    {% csrf_token %}
+    <!-- Output the form -->
+    {{ form }}
+    <input type="submit" value="Submit" />
+</form>
+{% endblock %}

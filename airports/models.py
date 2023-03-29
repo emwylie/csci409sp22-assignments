@@ -9,6 +9,7 @@ class Airport(models.Model):
     state = models.CharField(max_length=2)
     zipcode = models.CharField(max_length=5)
     is_open = models.BooleanField()
+
 class Runway(models.Model):
     # Runway Designation
     LEFT = 'L'
