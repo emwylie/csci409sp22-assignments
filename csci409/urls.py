@@ -22,6 +22,8 @@ import routes.views
 import tickets.views
 
 urlpatterns = [
+    path('', airports.views.index),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
     path('airports', include('airports.urls')),
     path('flights', include('flights.urls')),

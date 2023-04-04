@@ -2,7 +2,10 @@ from django.http import HttpResponse
 from .models import Reservation
 from django.shortcuts import render
 from .forms import TicketForm
+from django.contrib.auth.decorators import login_required
 
+
+@login_required
 def index(request):
     # Create an instance of the form class
     form = TicketForm()
@@ -10,6 +13,7 @@ def index(request):
     return render(request, 'tickets/index.html', {'form': form})
     # return HttpResponse('Hello from tickets')
 
+@login_required
 def ticket_search(request, confirmation_number):
     # Select the singular reservation for the confirmation number
     # Note: the confirmation_number is the id in the Reservation table
